@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  app:
+    image: test
+    ports:
+    - 8081:8081
+    volumes:
+    - ./:/app
+    - /app/node_modules
