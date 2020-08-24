@@ -1,0 +1,21 @@
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@mixin animation-fadeInUp($duration: 0.7s, $delay: 0s) {
+    animation: fadeInUp $duration ease-out $delay;
+    animation-fill-mode: both;
+}

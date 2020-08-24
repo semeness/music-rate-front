@@ -1,5 +1,5 @@
-$c-error-1: #ff725e;
-$c-error-2: #f3604b;
+$c-error-1: #e74c3c;
+$c-error-2: #c92918;
 
 $c-success-1: #63df8c;
 $c-success-2: #48c981;
@@ -34,8 +34,19 @@ $c-mark: #fadb14;
 $c-success: $c-success-2;
 $c-warning: #faad14;
 
-$c-black: #000000;
-$c-text: $c-gray-9;
+$c-black: #353835;
+$c-text: $c-gray-5;
 $c-white: #ffffff;
-$c-primary: $c-primary-6;
+$c-primary: $c-black;
 $c-secondary: #2a3136;
+
+
+@mixin create-color($name, $color) {
+    .c_#{$name} {
+        color: $color;
+    }
+}
+
+@include create-color(gray6, $c-gray-6);
+@include create-color(gray7, $c-gray-7);
+@include create-color(gray9, $c-gray-9);
