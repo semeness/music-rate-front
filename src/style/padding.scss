@@ -1,0 +1,42 @@
+@import 'metric';
+
+@mixin make-padding($name, $size) {
+    .p-b_#{$name} {
+        padding-bottom: $size;
+    }
+
+    .p-l_#{$name} {
+        padding-left: $size;
+    }
+
+    .p-r_#{$name} {
+        padding-right: $size;
+    }
+
+    .p-t_#{$name} {
+        padding-top: $size;
+    }
+
+    .p-v_#{$name} {
+        padding-bottom: $size;
+        padding-top: $size;
+    }
+
+    .p-h_#{$name} {
+        padding-left: $size;
+        padding-right: $size;
+    }
+
+    .p_#{$name} {
+        padding: $size;
+    }
+}
+
+
+@include make-padding(xxs, $metric-xxs);
+@include make-padding(xs, $metric-xs);
+@include make-padding(s, $metric-s);
+@include make-padding(m, $metric-m);
+@include make-padding(l, $metric-l);
+@include make-padding(xl, $metric-xl);
+@include make-padding(xxl, $metric-xxl);

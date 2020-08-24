@@ -1,0 +1,79 @@
+@import "font-raleway";
+@import "font-size";
+
+$font-family: $raleway-font-name;
+
+.f_h1 {
+    font-size: $fs-xxl;
+    font-weight: 700;
+    line-height: $lh-xxl;
+}
+
+.f_h2 {
+    font-size: $fs-xl;
+    font-weight: 400;
+    line-height: $lh-xl;
+}
+
+.f_h3 {
+    font-size: $fs-l;
+    font-weight: 400;
+    line-height: $lh-l;
+}
+
+.f_h4 {
+    font-size: $fs-m;
+    font-weight: 700;
+    line-height: $lh-m;
+}
+
+.f_h5 {
+    font-size: $fs-s;
+    font-weight: 700;
+    line-height: $lh-s;
+}
+
+.f_h6 {
+    font-size: $fs-xs;
+    font-weight: 300;
+    line-height: $lh-xs;
+}
+
+.f_p {
+    font-size: $fs-xs;
+    font-weight: 300;
+    line-height: $lh-xs;
+}
+
+
+@mixin make-font-size($name, $f-s, $l-h) {
+    .f-s_#{$name} {
+        font-size: $f-s;
+    }
+
+    .l-h_#{$name} {
+        line-height: $l-h;
+    }
+
+    .f_#{$name} {
+        font-size: $f-s;
+        line-height: $l-h;
+    }
+}
+
+@include make-font-size(xxl, $fs-xxl, $lh-xxl);
+@include make-font-size(xl, $fs-xl, $lh-xl);
+@include make-font-size(l, $fs-l, $lh-l);
+@include make-font-size(m, $fs-m, $lh-m);
+@include make-font-size(s, $fs-s, $lh-s);
+@include make-font-size(xs, $fs-xs, $lh-xs);
+
+@mixin make-font-weight($name, $size) {
+    .f-w_#{$name} {
+        font-weight: $size;
+    }
+}
+
+@include make-font-weight(light, 300)
+@include make-font-weight(regular, 400)
+@include make-font-weight(bold, 700)

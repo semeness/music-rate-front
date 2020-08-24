@@ -1,0 +1,24 @@
+@import 'color';
+@import 'font';
+@import 'font-size';
+
+.link_primary {
+    @extend .f-w_bold;
+
+    color: $c-text;
+    display: inline-block;
+    font-size: $fs-xxs;
+    transition: color .3s ease-in, transform .2s ease-in-out;
+    text-transform: uppercase;
+
+    &:hover {
+        color: $c-primary;
+        transform: translateY(-2px);
+    }
+
+    &:focus,
+    &:active {
+        color: $c-gray-7;
+    }
+
+}

@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import { Provider } from 'react-redux';
+import AppRoot from "app/components/Root/index";
 import './style/index.scss';
+import { createAppStore } from "app/store/createAppStore";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const root = document.getElementById("root");
+const store = createAppStore();
+
+ReactDOM.render(<Provider store={store}><AppRoot /></Provider>, root);

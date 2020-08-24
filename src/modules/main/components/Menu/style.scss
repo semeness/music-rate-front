@@ -1,0 +1,45 @@
+@import "src/style/metric";
+@import "src/style/color";
+@import "src/style/animation";
+
+.menu {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+
+    &__photo {
+        @include animation-fadeInUp();
+
+        border: 1px solid $c-gray-4;
+        object-fit: cover;
+
+    }
+
+    &__photo-container {
+        justify-content: space-between;
+        display: flex;
+        height: 100%;
+        width: 33%;
+    }
+
+    &__menu-items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 33%;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        display: inline-block;
+        user-select: none;
+        margin-right: $metric-l;
+
+    }
+
+    &__item-link {
+        text-decoration: none;
+    }
+}

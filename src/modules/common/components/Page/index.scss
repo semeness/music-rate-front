@@ -1,0 +1,59 @@
+@import "src/style/color";
+@import "src/style/metric";
+$bezier-func: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+.page {
+    &__title {
+        display: inline-block;
+        text-transform: uppercase;
+        position: relative;
+        padding: 1rem 2.5rem;
+        transition: color 0.5s $bezier-func;
+
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            height: 25%;
+            width: 10%;
+            transition: transform 0.5s $bezier-func, height 0.5s $bezier-func, width 0.5s $bezier-func,
+            border-radius 0.5s $bezier-func, top 0.5s $bezier-func, left 0.5s $bezier-func;
+            z-index: -1;
+            border-radius: 50%;
+        }
+
+        &::before {
+            background-color: $c-error-2;
+            top: -0.75rem;
+            left: 0.5rem;
+        }
+
+        &::after {
+            background-color: $c-error-1;
+            top: 3rem;
+            left: 11rem;
+        }
+
+        &:hover {
+            color: $c-white;
+
+            &::before,
+            &::after {
+                top: 0;
+                transform: skewx(-15deg);
+                height: 100%;
+                width: 100%;
+                border-radius: 0;
+            }
+
+            &::after {
+                left: 0;
+            }
+
+            &::before {
+                top: 0.5rem;
+                left: 0.35rem;
+            }
+        }
+    }
+}

@@ -3,7 +3,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 const PATHS = {
     assets: 'assets/',
     dist: path.join(__dirname, '../dist'),
@@ -20,7 +19,7 @@ module.exports = {
     optimization: {
         splitChunks: {
             cacheGroups: {
-                vendor:  {
+                vendor: {
                     chunks: 'all',
                     enforce: true,
                     name: 'vendors',
@@ -38,15 +37,7 @@ module.exports = {
         rules: [
             {
                 test: /\.(ts|tsx)$/,
-                use: [{
-                    loader: 'babel-loader',
-                        options: {
-                        presets: ["@babel/typescript", "@babel/react"],
-                            plugins: [
-                            "@babel/proposal-class-properties",
-                            "@babel/proposal-object-rest-spread"
-                        ]}
-                    }],
+                use: ['babel-loader'],
                 exclude: /node_modules/
             },
             {
@@ -69,20 +60,34 @@ module.exports = {
             },
             {
                 test: /\.(gif|png|jpe?g|svg)$/i,
-                use: [{
+                use: [
+                    {
                         loader: 'file-loader',
                         options: {
                             name: '[name].[ext]',
                         },
-                    }, {
-                    loader: 'image-webpack-loader',
+                    },
+                    {
+                        loader: 'image-webpack-loader',
+                    }
+                ]
+            },
+            {
+                test: /\.ttf$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                        }
                     }
                 ]
             }
         ],
     },
     resolve: {
-        extensions: [ '.tsx', '.ts', '.jsx', '.js' ],
+        extensions: ['.tsx', '.ts', '.jsx', '.js'],
+        modules: [PATHS.src, 'node_modules']
     },
     plugins: [
         new MiniCssExtractPlugin({
