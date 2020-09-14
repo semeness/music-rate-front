@@ -1,0 +1,41 @@
+@import '~rc-time-picker/assets/index.css';
+@import "src/style/color";
+@import "src/style/metric";
+@import "src/style/font-size";
+
+.time-picker {
+    &.rc-time-picker {
+        align-items: flex-end;
+        display: flex;
+        height: 40px;
+    }
+
+    & .rc-time-picker-clear {
+        top: 15px;
+    }
+
+    & .rc-time-picker-input {
+        outline: none;
+        border: 0;
+        border-radius: 0;
+        border-bottom: 1px solid $c-black;
+        color: $c-gray-6;
+        font-size: $fs-xxs;
+        line-height: $lh-xxs;
+        padding: $metric-xxs;
+
+        &::placeholder {
+            color: $c-text;
+            font-size: $fs-xs;
+            line-height: $lh-xs;
+        }
+    }
+    &__popup {
+        &.rc-time-picker-panel-narrow {
+            max-width: unset;
+        }
+        & .rc-time-picker-panel-select {
+            width: 50%;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+@import "src/style/color";
+@import "src/style/metric";
+@import "src/style/font-size";
+
+.mood-selector {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    &__item {
+        position: relative;
+        cursor: pointer;
+        flex: 1;
+        text-align: center;
+        padding: $metric-xs;
+        display: inline-block;
+        user-select: none;
+        transition: transform 0.2s ease, color 0.2s ease;
+
+        &_active {
+            color: $c-success;
+            transform: scale(1.2);
+        }
+    }
+
+    &__item-visual {
+        padding-bottom: $metric-xxs;
+        font-size: $fs-xxxl;
+        line-height: $lh-xxxl;
+        transition: transform 0.2s ease-out;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    &__item-name {
+        font-size: $fs-xxxs;
+        line-height: $lh-xxxs;
+
+    }
+}

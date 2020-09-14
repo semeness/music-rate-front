@@ -1,4 +1,4 @@
-import {Link, useRouteMatch} from "react-router-dom";
+import {Link} from "react-router-dom";
 import React from "react";
 import './style.scss';
 import eat from 'img/eat.jpg';
@@ -30,8 +30,6 @@ function renderPhoto(photoList: TPhotoData[]) {
 }
 
 export default function Menu() {
-    const match = useRouteMatch();
-
     return (
       <div className="menu p-v_xs p-h_s">
         <div className="menu__photo-container">
@@ -39,7 +37,7 @@ export default function Menu() {
         </div>
         <ul className="menu__menu-items">
           <li className="menu__item">
-            <Link className="menu__item-link" to="/">Home</Link>
+            <Link className="menu__item-link" to="/tracker">Tracker</Link>
           </li>
           <li className="menu__item">
             <Link className="menu__item-link" to="/about">About</Link>

@@ -1,6 +1,7 @@
 @import "src/style/color";
 @import "src/style/metric";
 $bezier-func: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$circle-diameter: 20px;
 
 .page {
     &__title {
@@ -14,8 +15,8 @@ $bezier-func: cubic-bezier(0.68, -0.55, 0.265, 1.55);
         &::before {
             content: "";
             position: absolute;
-            height: 25%;
-            width: 10%;
+            height: $circle-diameter;
+            width: $circle-diameter;
             transition: transform 0.5s $bezier-func, height 0.5s $bezier-func, width 0.5s $bezier-func,
             border-radius 0.5s $bezier-func, top 0.5s $bezier-func, left 0.5s $bezier-func;
             z-index: -1;
@@ -24,14 +25,14 @@ $bezier-func: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
         &::before {
             background-color: $c-error-2;
-            top: -0.75rem;
-            left: 0.5rem;
+            top: 0;
+            left: 0;
         }
 
         &::after {
             background-color: $c-error-1;
-            top: 3rem;
-            left: 11rem;
+            top: 80%;
+            right: 0;
         }
 
         &:hover {
@@ -44,10 +45,6 @@ $bezier-func: cubic-bezier(0.68, -0.55, 0.265, 1.55);
                 height: 100%;
                 width: 100%;
                 border-radius: 0;
-            }
-
-            &::after {
-                left: 0;
             }
 
             &::before {

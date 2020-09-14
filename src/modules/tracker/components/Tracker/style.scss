@@ -1,0 +1,17 @@
+@import "src/style/metric";
+
+.tracker {
+    &__fields-container {
+        display: flex;
+    }
+
+    &__mood-selector {
+        margin-bottom: $metric-m;
+    }
+
+    &__day-picker,
+    &__time-picker,
+    &__input {
+        width: 33%;
+    }
+}

@@ -1,0 +1,12 @@
+@import 'src/style/color';
+@import 'src/style/metric';
+
+.form {
+    margin: auto;
+    width: 800px;
+
+    &__title {
+        margin-bottom: $metric-m;
+        text-align: center;
+    }
+}
